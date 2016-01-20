@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="bgz-5d-qlq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sender-->
+        <scene sceneID="dby-Bf-beV">
+            <objects>
+                <collectionViewController title="Premium" id="Jew-N8-gxW" userLabel="Sender" customClass="ViewController" customModule="Stream4k" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5AJ-ym-5Ea">
+                        <rect key="frame" x="0.0" y="145" width="1920" height="935"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zit-Ju-lX5">
+                            <size key="itemSize" width="350" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="90" minY="60" maxX="90" maxY="60"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="FxZ-uQ-lRN" customClass="SenderCollectionViewCell" customModule="Stream4k" customModuleProvider="target">
+                                <rect key="frame" x="90" y="60" width="350" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-ry-m8i">
+                                            <rect key="frame" x="8" y="8" width="334" height="191"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="334" id="fQA-UT-PGn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRn-DD-NX5">
+                                            <rect key="frame" x="8" y="207" width="334" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="N8Z-rJ-07C"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="lRn-DD-NX5" firstAttribute="leading" secondItem="aZl-ry-m8i" secondAttribute="leading" id="Cfr-gX-9o7"/>
+                                    <constraint firstItem="aZl-ry-m8i" firstAttribute="leading" secondItem="FxZ-uQ-lRN" secondAttribute="leadingMargin" id="Nbf-OK-zxh"/>
+                                    <constraint firstItem="aZl-ry-m8i" firstAttribute="top" secondItem="FxZ-uQ-lRN" secondAttribute="topMargin" id="PK7-d7-bot"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="lRn-DD-NX5" secondAttribute="bottom" id="jdS-Kx-PcR"/>
+                                    <constraint firstItem="lRn-DD-NX5" firstAttribute="top" secondItem="aZl-ry-m8i" secondAttribute="bottom" constant="8" symbolic="YES" id="pKn-CY-vCV"/>
+                                    <constraint firstItem="lRn-DD-NX5" firstAttribute="trailing" secondItem="aZl-ry-m8i" secondAttribute="trailing" id="pbQ-mA-Ts6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="imageView" destination="aZl-ry-m8i" id="c6m-n9-Ayq"/>
+                                    <outlet property="titleLabel" destination="lRn-DD-NX5" id="D5h-xI-TgI"/>
+                                    <segue destination="gMb-12-rco" kind="show" identifier="showPlayer" id="raS-jP-tMa"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Jew-N8-gxW" id="3b6-Lo-D1Z"/>
+                            <outlet property="delegate" destination="Jew-N8-gxW" id="zTH-ts-B0x"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Stream4k" id="lqc-4O-e8y">
+                        <barButtonItem key="rightBarButtonItem" title="User" id="kI4-Zp-Z2I">
+                            <connections>
+                                <action selector="userButtonPressed:" destination="Jew-N8-gxW" id="O2h-2G-a0f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqf-Ii-rRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="1636"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="0zo-i1-eOF">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="gMb-12-rco" customClass="PlayerViewController" customModule="Stream4k" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="220-fc-sML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4980" y="2305"/>
+        </scene>
+        <!--Premium-->
+        <scene sceneID="JZp-ve-UmB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgz-5d-qlq" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Premium" id="Jdm-76-BlC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="158-IO-tGy">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jew-N8-gxW" kind="relationship" relationship="rootViewController" id="rj4-sJ-gGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mct-W4-p3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312" y="1636"/>
+        </scene>
+    </scenes>
+</document>

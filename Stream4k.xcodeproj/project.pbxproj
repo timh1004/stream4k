@@ -1,0 +1,877 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		080950891C4BF40900552C26 /* TVStationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950881C4BF40900552C26 /* TVStationsController.swift */; };
+		0809508B1C4BFE5600552C26 /* SenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809508A1C4BFE5600552C26 /* SenderCollectionViewCell.swift */; };
+		0809508D1C4D0D5C00552C26 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809508C1C4D0D5C00552C26 /* PlayerViewController.swift */; };
+		0809508F1C4D218800552C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0809508E1C4D218800552C26 /* Assets.xcassets */; };
+		080950CA1C4EBC3600552C26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950C91C4EBC3600552C26 /* AppDelegate.swift */; };
+		080950CF1C4EBC3600552C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080950CD1C4EBC3600552C26 /* Main.storyboard */; };
+		080950D11C4EBC3600552C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080950D01C4EBC3600552C26 /* Assets.xcassets */; };
+		080950D41C4EBC3600552C26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080950D21C4EBC3600552C26 /* LaunchScreen.storyboard */; };
+		080950DF1C4EBC3700552C26 /* Stream4k_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950DE1C4EBC3700552C26 /* Stream4k_iOSTests.swift */; };
+		080950EA1C4EBC3700552C26 /* Stream4k_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950E91C4EBC3700552C26 /* Stream4k_iOSUITests.swift */; };
+		080950F61C4EC40C00552C26 /* SenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950F51C4EC40C00552C26 /* SenderTableViewCell.swift */; };
+		080950F71C4EC4E800552C26 /* TVStationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950881C4BF40900552C26 /* TVStationsController.swift */; };
+		080950F91C4ED5A300552C26 /* StationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080950F81C4ED5A300552C26 /* StationsTableViewController.swift */; };
+		080950FC1C4EE7B400552C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0809508E1C4D218800552C26 /* Assets.xcassets */; };
+		085239BA1C4BDC2800F50906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085239B91C4BDC2800F50906 /* AppDelegate.swift */; };
+		085239BC1C4BDC2800F50906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085239BB1C4BDC2800F50906 /* ViewController.swift */; };
+		085239BF1C4BDC2800F50906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 085239BD1C4BDC2800F50906 /* Main.storyboard */; };
+		085239CC1C4BDC2900F50906 /* Stream4kTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085239CB1C4BDC2900F50906 /* Stream4kTests.swift */; };
+		085239D71C4BDC2900F50906 /* Stream4kUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085239D61C4BDC2900F50906 /* Stream4kUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		080950DB1C4EBC3700552C26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 085239AE1C4BDC2800F50906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 080950C61C4EBC3600552C26;
+			remoteInfo = "Stream4k iOS";
+		};
+		080950E61C4EBC3700552C26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 085239AE1C4BDC2800F50906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 080950C61C4EBC3600552C26;
+			remoteInfo = "Stream4k iOS";
+		};
+		085239C81C4BDC2900F50906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 085239AE1C4BDC2800F50906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 085239B51C4BDC2800F50906;
+			remoteInfo = Stream4k;
+		};
+		085239D31C4BDC2900F50906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 085239AE1C4BDC2800F50906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 085239B51C4BDC2800F50906;
+			remoteInfo = Stream4k;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		080950881C4BF40900552C26 /* TVStationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVStationsController.swift; sourceTree = "<group>"; };
+		0809508A1C4BFE5600552C26 /* SenderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderCollectionViewCell.swift; sourceTree = "<group>"; };
+		0809508C1C4D0D5C00552C26 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		0809508E1C4D218800552C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		080950C71C4EBC3600552C26 /* Stream4k iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stream4k iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		080950C91C4EBC3600552C26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		080950CE1C4EBC3600552C26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		080950D01C4EBC3600552C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		080950D31C4EBC3600552C26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		080950D51C4EBC3600552C26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		080950DA1C4EBC3700552C26 /* Stream4k iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stream4k iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		080950DE1C4EBC3700552C26 /* Stream4k_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream4k_iOSTests.swift; sourceTree = "<group>"; };
+		080950E01C4EBC3700552C26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		080950E51C4EBC3700552C26 /* Stream4k iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stream4k iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		080950E91C4EBC3700552C26 /* Stream4k_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream4k_iOSUITests.swift; sourceTree = "<group>"; };
+		080950EB1C4EBC3700552C26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		080950F51C4EC40C00552C26 /* SenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderTableViewCell.swift; sourceTree = "<group>"; };
+		080950F81C4ED5A300552C26 /* StationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewController.swift; sourceTree = "<group>"; };
+		085239B61C4BDC2800F50906 /* Stream4k.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stream4k.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		085239B91C4BDC2800F50906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		085239BB1C4BDC2800F50906 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		085239BE1C4BDC2800F50906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		085239C21C4BDC2800F50906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		085239C71C4BDC2900F50906 /* Stream4kTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stream4kTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		085239CB1C4BDC2900F50906 /* Stream4kTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream4kTests.swift; sourceTree = "<group>"; };
+		085239CD1C4BDC2900F50906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		085239D21C4BDC2900F50906 /* Stream4kUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stream4kUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		085239D61C4BDC2900F50906 /* Stream4kUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream4kUITests.swift; sourceTree = "<group>"; };
+		085239D81C4BDC2900F50906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		080950C41C4EBC3600552C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950D71C4EBC3700552C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950E21C4EBC3700552C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239B31C4BDC2800F50906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239C41C4BDC2900F50906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239CF1C4BDC2900F50906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080950C81C4EBC3600552C26 /* Stream4k iOS */ = {
+			isa = PBXGroup;
+			children = (
+				080950C91C4EBC3600552C26 /* AppDelegate.swift */,
+				080950F81C4ED5A300552C26 /* StationsTableViewController.swift */,
+				080950F51C4EC40C00552C26 /* SenderTableViewCell.swift */,
+				080950CD1C4EBC3600552C26 /* Main.storyboard */,
+				080950D01C4EBC3600552C26 /* Assets.xcassets */,
+				080950D21C4EBC3600552C26 /* LaunchScreen.storyboard */,
+				080950D51C4EBC3600552C26 /* Info.plist */,
+			);
+			path = "Stream4k iOS";
+			sourceTree = "<group>";
+		};
+		080950DD1C4EBC3700552C26 /* Stream4k iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				080950DE1C4EBC3700552C26 /* Stream4k_iOSTests.swift */,
+				080950E01C4EBC3700552C26 /* Info.plist */,
+			);
+			path = "Stream4k iOSTests";
+			sourceTree = "<group>";
+		};
+		080950E81C4EBC3700552C26 /* Stream4k iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				080950E91C4EBC3700552C26 /* Stream4k_iOSUITests.swift */,
+				080950EB1C4EBC3700552C26 /* Info.plist */,
+			);
+			path = "Stream4k iOSUITests";
+			sourceTree = "<group>";
+		};
+		085239AD1C4BDC2800F50906 = {
+			isa = PBXGroup;
+			children = (
+				085239B81C4BDC2800F50906 /* Stream4k */,
+				085239CA1C4BDC2900F50906 /* Stream4kTests */,
+				085239D51C4BDC2900F50906 /* Stream4kUITests */,
+				080950C81C4EBC3600552C26 /* Stream4k iOS */,
+				080950DD1C4EBC3700552C26 /* Stream4k iOSTests */,
+				080950E81C4EBC3700552C26 /* Stream4k iOSUITests */,
+				085239B71C4BDC2800F50906 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		085239B71C4BDC2800F50906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				085239B61C4BDC2800F50906 /* Stream4k.app */,
+				085239C71C4BDC2900F50906 /* Stream4kTests.xctest */,
+				085239D21C4BDC2900F50906 /* Stream4kUITests.xctest */,
+				080950C71C4EBC3600552C26 /* Stream4k iOS.app */,
+				080950DA1C4EBC3700552C26 /* Stream4k iOSTests.xctest */,
+				080950E51C4EBC3700552C26 /* Stream4k iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		085239B81C4BDC2800F50906 /* Stream4k */ = {
+			isa = PBXGroup;
+			children = (
+				085239B91C4BDC2800F50906 /* AppDelegate.swift */,
+				085239BB1C4BDC2800F50906 /* ViewController.swift */,
+				0809508A1C4BFE5600552C26 /* SenderCollectionViewCell.swift */,
+				0809508C1C4D0D5C00552C26 /* PlayerViewController.swift */,
+				080950881C4BF40900552C26 /* TVStationsController.swift */,
+				085239BD1C4BDC2800F50906 /* Main.storyboard */,
+				0809508E1C4D218800552C26 /* Assets.xcassets */,
+				085239C21C4BDC2800F50906 /* Info.plist */,
+			);
+			path = Stream4k;
+			sourceTree = "<group>";
+		};
+		085239CA1C4BDC2900F50906 /* Stream4kTests */ = {
+			isa = PBXGroup;
+			children = (
+				085239CB1C4BDC2900F50906 /* Stream4kTests.swift */,
+				085239CD1C4BDC2900F50906 /* Info.plist */,
+			);
+			path = Stream4kTests;
+			sourceTree = "<group>";
+		};
+		085239D51C4BDC2900F50906 /* Stream4kUITests */ = {
+			isa = PBXGroup;
+			children = (
+				085239D61C4BDC2900F50906 /* Stream4kUITests.swift */,
+				085239D81C4BDC2900F50906 /* Info.plist */,
+			);
+			path = Stream4kUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		080950C61C4EBC3600552C26 /* Stream4k iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080950EC1C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOS" */;
+			buildPhases = (
+				080950C31C4EBC3600552C26 /* Sources */,
+				080950C41C4EBC3600552C26 /* Frameworks */,
+				080950C51C4EBC3600552C26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stream4k iOS";
+			productName = "Stream4k iOS";
+			productReference = 080950C71C4EBC3600552C26 /* Stream4k iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		080950D91C4EBC3700552C26 /* Stream4k iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080950EF1C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOSTests" */;
+			buildPhases = (
+				080950D61C4EBC3700552C26 /* Sources */,
+				080950D71C4EBC3700552C26 /* Frameworks */,
+				080950D81C4EBC3700552C26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				080950DC1C4EBC3700552C26 /* PBXTargetDependency */,
+			);
+			name = "Stream4k iOSTests";
+			productName = "Stream4k iOSTests";
+			productReference = 080950DA1C4EBC3700552C26 /* Stream4k iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		080950E41C4EBC3700552C26 /* Stream4k iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080950F21C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOSUITests" */;
+			buildPhases = (
+				080950E11C4EBC3700552C26 /* Sources */,
+				080950E21C4EBC3700552C26 /* Frameworks */,
+				080950E31C4EBC3700552C26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				080950E71C4EBC3700552C26 /* PBXTargetDependency */,
+			);
+			name = "Stream4k iOSUITests";
+			productName = "Stream4k iOSUITests";
+			productReference = 080950E51C4EBC3700552C26 /* Stream4k iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		085239B51C4BDC2800F50906 /* Stream4k */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 085239DB1C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4k" */;
+			buildPhases = (
+				085239B21C4BDC2800F50906 /* Sources */,
+				085239B31C4BDC2800F50906 /* Frameworks */,
+				085239B41C4BDC2800F50906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stream4k;
+			productName = Stream4k;
+			productReference = 085239B61C4BDC2800F50906 /* Stream4k.app */;
+			productType = "com.apple.product-type.application";
+		};
+		085239C61C4BDC2900F50906 /* Stream4kTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 085239DE1C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4kTests" */;
+			buildPhases = (
+				085239C31C4BDC2900F50906 /* Sources */,
+				085239C41C4BDC2900F50906 /* Frameworks */,
+				085239C51C4BDC2900F50906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				085239C91C4BDC2900F50906 /* PBXTargetDependency */,
+			);
+			name = Stream4kTests;
+			productName = Stream4kTests;
+			productReference = 085239C71C4BDC2900F50906 /* Stream4kTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		085239D11C4BDC2900F50906 /* Stream4kUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 085239E11C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4kUITests" */;
+			buildPhases = (
+				085239CE1C4BDC2900F50906 /* Sources */,
+				085239CF1C4BDC2900F50906 /* Frameworks */,
+				085239D01C4BDC2900F50906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				085239D41C4BDC2900F50906 /* PBXTargetDependency */,
+			);
+			name = Stream4kUITests;
+			productName = Stream4kUITests;
+			productReference = 085239D21C4BDC2900F50906 /* Stream4kUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		085239AE1C4BDC2800F50906 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tim Haug";
+				TargetAttributes = {
+					080950C61C4EBC3600552C26 = {
+						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					080950D91C4EBC3700552C26 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 080950C61C4EBC3600552C26;
+					};
+					080950E41C4EBC3700552C26 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 080950C61C4EBC3600552C26;
+					};
+					085239B51C4BDC2800F50906 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Z345XU65N8;
+					};
+					085239C61C4BDC2900F50906 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 085239B51C4BDC2800F50906;
+					};
+					085239D11C4BDC2900F50906 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 085239B51C4BDC2800F50906;
+					};
+				};
+			};
+			buildConfigurationList = 085239B11C4BDC2800F50906 /* Build configuration list for PBXProject "Stream4k" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 085239AD1C4BDC2800F50906;
+			productRefGroup = 085239B71C4BDC2800F50906 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				085239B51C4BDC2800F50906 /* Stream4k */,
+				085239C61C4BDC2900F50906 /* Stream4kTests */,
+				085239D11C4BDC2900F50906 /* Stream4kUITests */,
+				080950C61C4EBC3600552C26 /* Stream4k iOS */,
+				080950D91C4EBC3700552C26 /* Stream4k iOSTests */,
+				080950E41C4EBC3700552C26 /* Stream4k iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		080950C51C4EBC3600552C26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080950D41C4EBC3600552C26 /* LaunchScreen.storyboard in Resources */,
+				080950D11C4EBC3600552C26 /* Assets.xcassets in Resources */,
+				080950FC1C4EE7B400552C26 /* Assets.xcassets in Resources */,
+				080950CF1C4EBC3600552C26 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950D81C4EBC3700552C26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950E31C4EBC3700552C26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239B41C4BDC2800F50906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0809508F1C4D218800552C26 /* Assets.xcassets in Resources */,
+				085239BF1C4BDC2800F50906 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239C51C4BDC2900F50906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239D01C4BDC2900F50906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		080950C31C4EBC3600552C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080950F71C4EC4E800552C26 /* TVStationsController.swift in Sources */,
+				080950F91C4ED5A300552C26 /* StationsTableViewController.swift in Sources */,
+				080950F61C4EC40C00552C26 /* SenderTableViewCell.swift in Sources */,
+				080950CA1C4EBC3600552C26 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950D61C4EBC3700552C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080950DF1C4EBC3700552C26 /* Stream4k_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		080950E11C4EBC3700552C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080950EA1C4EBC3700552C26 /* Stream4k_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239B21C4BDC2800F50906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				085239BC1C4BDC2800F50906 /* ViewController.swift in Sources */,
+				0809508B1C4BFE5600552C26 /* SenderCollectionViewCell.swift in Sources */,
+				080950891C4BF40900552C26 /* TVStationsController.swift in Sources */,
+				085239BA1C4BDC2800F50906 /* AppDelegate.swift in Sources */,
+				0809508D1C4D0D5C00552C26 /* PlayerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239C31C4BDC2900F50906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				085239CC1C4BDC2900F50906 /* Stream4kTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		085239CE1C4BDC2900F50906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				085239D71C4BDC2900F50906 /* Stream4kUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		080950DC1C4EBC3700552C26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 080950C61C4EBC3600552C26 /* Stream4k iOS */;
+			targetProxy = 080950DB1C4EBC3700552C26 /* PBXContainerItemProxy */;
+		};
+		080950E71C4EBC3700552C26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 080950C61C4EBC3600552C26 /* Stream4k iOS */;
+			targetProxy = 080950E61C4EBC3700552C26 /* PBXContainerItemProxy */;
+		};
+		085239C91C4BDC2900F50906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 085239B51C4BDC2800F50906 /* Stream4k */;
+			targetProxy = 085239C81C4BDC2900F50906 /* PBXContainerItemProxy */;
+		};
+		085239D41C4BDC2900F50906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 085239B51C4BDC2800F50906 /* Stream4k */;
+			targetProxy = 085239D31C4BDC2900F50906 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		080950CD1C4EBC3600552C26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				080950CE1C4EBC3600552C26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		080950D21C4EBC3600552C26 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				080950D31C4EBC3600552C26 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		085239BD1C4BDC2800F50906 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				085239BE1C4BDC2800F50906 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		080950ED1C4EBC3700552C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		080950EE1C4EBC3700552C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		080950F01C4EBC3700552C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream4k iOS.app/Stream4k iOS";
+			};
+			name = Debug;
+		};
+		080950F11C4EBC3700552C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream4k iOS.app/Stream4k iOS";
+			};
+			name = Release;
+		};
+		080950F31C4EBC3700552C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = "Stream4k iOS";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		080950F41C4EBC3700552C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Stream4k iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timh.Stream4k-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = "Stream4k iOS";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		085239D91C4BDC2900F50906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		085239DA1C4BDC2900F50906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		085239DC1C4BDC2900F50906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Stream4k/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4k;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		085239DD1C4BDC2900F50906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Stream4k/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4k;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		085239DF1C4BDC2900F50906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Stream4kTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4kTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream4k.app/Stream4k";
+			};
+			name = Debug;
+		};
+		085239E01C4BDC2900F50906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Stream4kTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4kTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream4k.app/Stream4k";
+			};
+			name = Release;
+		};
+		085239E21C4BDC2900F50906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Stream4kUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4kUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Stream4k;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		085239E31C4BDC2900F50906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Stream4kUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.timh.Stream4kUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Stream4k;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		080950EC1C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				080950ED1C4EBC3700552C26 /* Debug */,
+				080950EE1C4EBC3700552C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		080950EF1C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				080950F01C4EBC3700552C26 /* Debug */,
+				080950F11C4EBC3700552C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		080950F21C4EBC3700552C26 /* Build configuration list for PBXNativeTarget "Stream4k iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				080950F31C4EBC3700552C26 /* Debug */,
+				080950F41C4EBC3700552C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		085239B11C4BDC2800F50906 /* Build configuration list for PBXProject "Stream4k" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				085239D91C4BDC2900F50906 /* Debug */,
+				085239DA1C4BDC2900F50906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		085239DB1C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4k" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				085239DC1C4BDC2900F50906 /* Debug */,
+				085239DD1C4BDC2900F50906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		085239DE1C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4kTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				085239DF1C4BDC2900F50906 /* Debug */,
+				085239E01C4BDC2900F50906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		085239E11C4BDC2900F50906 /* Build configuration list for PBXNativeTarget "Stream4kUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				085239E21C4BDC2900F50906 /* Debug */,
+				085239E31C4BDC2900F50906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 085239AE1C4BDC2800F50906 /* Project object */;
+}

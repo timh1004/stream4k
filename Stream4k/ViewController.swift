@@ -12,7 +12,7 @@ class ViewController: UICollectionViewController {
     
     var tvStations: [MediaItem] = []
     let defaults = NSUserDefaults.standardUserDefaults()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,7 +30,7 @@ class ViewController: UICollectionViewController {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,46 +39,50 @@ class ViewController: UICollectionViewController {
     @IBAction func userButtonPressed(sender: AnyObject) {
         showUserAlertController()
     }
+    @IBAction func reloadButtonPressed(sender: AnyObject) {
+        loadStations()
+    }
     
     func loadStations() {
         
         if let userID = defaults.stringForKey("userID") {
-            if userID.characters.count == 8 {
-                
-                let urlWithUserID = "http://\(userID).xbmc.stream4k.net"
-                if let contentsOfFile = String(contentsOfURL: NSURL(string: urlWithUserID)!) {
-                    print(contentsOfFile)
+            if let userTld = defaults.stringForKey("userTld") {
+                if userID.characters.count == 8 {
                     
-                    
-                    let instance = TVStationsController()
-                    
-                    
-                    
-                    tvStations = instance.parseM3U(contentsOfFile)!
-                    
-                    print(tvStations)
-                    
-                    
-                    
-                } else {
-                    print("keine website")
-                    
-                    tvStations = []
-                    collectionView!.reloadData()
-                    
-                    let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche Benutzerkennung oder Probleme mit der Website?", preferredStyle: .Alert)
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        self.showUserAlertController()
+                    let urlWithUserID = "http://\(userID).xbmc.stream4k.\(userTld)"
+                    if let contentsOfFile = try? String(contentsOfURL: NSURL(string: urlWithUserID)!) {
+                        print(contentsOfFile)
+                        
+                        
+                        let instance = TVStationsController()
+                        
+                        
+                        
+                        tvStations = instance.parseM3U(contentsOfFile)!
+                        
+                        print(tvStations)
+                        
+                        
+                        
+                    } else {
+                        print("keine website")
+                        
+                        tvStations = []
+                        collectionView!.reloadData()
+                        
+                        let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche Benutzerkennung/TLD oder Probleme mit der Website?", preferredStyle: .Alert)
+                        
+                        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                            self.showUserAlertController()
+                        }
+                        
+                        alertController.addAction(OKAction)
+                        
+                        self.presentViewController(alertController, animated: true) {
+                        }
+                        
                     }
-                    
-                    alertController.addAction(OKAction)
-                    
-                    self.presentViewController(alertController, animated: true) {
-                    }
-                    
                 }
-                
             } else {
                 showUserAlertController()
             }
@@ -86,14 +90,14 @@ class ViewController: UICollectionViewController {
             print("no id")
             showUserAlertController()
         }
-    
+        
         collectionView!.reloadData()
         
     }
     
     func showUserAlertController() {
         
-        let alertController = UIAlertController(title: "Benutzerkennung und TLD", message: "Bitte gib deine 8-stellige Benutzerkennung und die TLD ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Benutzerkennung und TLD", message: "Bitte gib deine 8-stellige Benutzerkennung und die TLD (Zum Beispiel \"net\") ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
         
         let loginAction = UIAlertAction(title: "Speichern", style: .Default) { (_) in
             let loginTextField = alertController.textFields![0] as UITextField
@@ -124,7 +128,7 @@ class ViewController: UICollectionViewController {
                 if userTld.characters.count >= 0 {
                     textField.text = userTld
                 } else {
-                    textField.placeholder = "TLD"
+                    textField.placeholder = "Zum Beispiel \"net\""
                 }
             }
             
@@ -180,57 +184,57 @@ class ViewController: UICollectionViewController {
         }
         
         
-//        cell.titleLabel?.text = "test"
-    
-//        cell.titleLabel.text = currentItem.title
-//
-//        if let _ = tvStationsControllerInstance
-//        {
-//            let imageURLString = tvStationsControllerInstance!.imageURLOfTVStationInRegion(region, station: indexPath.row)
-//            let imageURL = NSURL(string: imageURLString)
-//            
-//            let tmpDir = NSTemporaryDirectory()
-//            let imageURLmd5Value = md5(string: imageURLString)
-//            let tmpFileURL = tmpDir + imageURLmd5Value
-//            
-//            if let imageData = NSData(contentsOfFile: tmpFileURL)
-//            {
-//                cell.imageView.image = UIImage(data: imageData)
-//            }
-//            else
-//            {
-//                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-//                dispatch_async(dispatch_get_global_queue(priority, 0))
-//                    {
-//                        let imageData = NSData(contentsOfURL: imageURL!)
-//                        dispatch_async(dispatch_get_main_queue())
-//                            {
-//                                if (imageData != nil)
-//                                {
-//                                    imageData?.writeToFile(tmpFileURL, atomically: true)
-//                                    cell.imageView.image = UIImage(data: imageData!)
-//                                }
-//                        }
-//                }
-//            }
-//            cell.titleLabel.text = tvStationsControllerInstance!.nameOfTVStationInRegion(region, station: indexPath.row)
-//            cell.backgroundColor = UIColor.clearColor()
-//        }
+        //        cell.titleLabel?.text = "test"
+        
+        //        cell.titleLabel.text = currentItem.title
+        //
+        //        if let _ = tvStationsControllerInstance
+        //        {
+        //            let imageURLString = tvStationsControllerInstance!.imageURLOfTVStationInRegion(region, station: indexPath.row)
+        //            let imageURL = NSURL(string: imageURLString)
+        //
+        //            let tmpDir = NSTemporaryDirectory()
+        //            let imageURLmd5Value = md5(string: imageURLString)
+        //            let tmpFileURL = tmpDir + imageURLmd5Value
+        //
+        //            if let imageData = NSData(contentsOfFile: tmpFileURL)
+        //            {
+        //                cell.imageView.image = UIImage(data: imageData)
+        //            }
+        //            else
+        //            {
+        //                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        //                dispatch_async(dispatch_get_global_queue(priority, 0))
+        //                    {
+        //                        let imageData = NSData(contentsOfURL: imageURL!)
+        //                        dispatch_async(dispatch_get_main_queue())
+        //                            {
+        //                                if (imageData != nil)
+        //                                {
+        //                                    imageData?.writeToFile(tmpFileURL, atomically: true)
+        //                                    cell.imageView.image = UIImage(data: imageData!)
+        //                                }
+        //                        }
+        //                }
+        //            }
+        //            cell.titleLabel.text = tvStationsControllerInstance!.nameOfTVStationInRegion(region, station: indexPath.row)
+        //            cell.backgroundColor = UIColor.clearColor()
+        //        }
         
         return cell
     }
     
-//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
-//    {
-//
-//        let playerViewController = PlayerViewController()
-//        playerViewController.urlString = tvStationsController()!.hlsURLOfTVStationInRegion(region, station: indexPath.row)
-//        
-//        self.tabBarController?.presentViewController(playerViewController, animated: true, completion: { () -> Void in
-//            
-//        })
-//    }
-
+    //    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    //    {
+    //
+    //        let playerViewController = PlayerViewController()
+    //        playerViewController.urlString = tvStationsController()!.hlsURLOfTVStationInRegion(region, station: indexPath.row)
+    //
+    //        self.tabBarController?.presentViewController(playerViewController, animated: true, completion: { () -> Void in
+    //
+    //        })
+    //    }
+    
     override func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         
         
@@ -275,7 +279,7 @@ class ViewController: UICollectionViewController {
             destination.urlString = tvStations[index!].urlString!
         }
     }
-
-
+    
+    
 }
 

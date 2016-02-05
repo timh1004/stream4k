@@ -90,7 +90,7 @@ class StationsTableViewController: UITableViewController {
             }
             
             NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                loginAction.enabled = textField.text?.characters.count >= 3
+                loginAction.enabled = textField.text?.characters.count >= 2
             }
             
         }

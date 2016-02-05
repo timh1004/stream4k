@@ -184,43 +184,6 @@ class ViewController: UICollectionViewController {
         }
         
         
-        //        cell.titleLabel?.text = "test"
-        
-        //        cell.titleLabel.text = currentItem.title
-        //
-        //        if let _ = tvStationsControllerInstance
-        //        {
-        //            let imageURLString = tvStationsControllerInstance!.imageURLOfTVStationInRegion(region, station: indexPath.row)
-        //            let imageURL = NSURL(string: imageURLString)
-        //
-        //            let tmpDir = NSTemporaryDirectory()
-        //            let imageURLmd5Value = md5(string: imageURLString)
-        //            let tmpFileURL = tmpDir + imageURLmd5Value
-        //
-        //            if let imageData = NSData(contentsOfFile: tmpFileURL)
-        //            {
-        //                cell.imageView.image = UIImage(data: imageData)
-        //            }
-        //            else
-        //            {
-        //                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        //                dispatch_async(dispatch_get_global_queue(priority, 0))
-        //                    {
-        //                        let imageData = NSData(contentsOfURL: imageURL!)
-        //                        dispatch_async(dispatch_get_main_queue())
-        //                            {
-        //                                if (imageData != nil)
-        //                                {
-        //                                    imageData?.writeToFile(tmpFileURL, atomically: true)
-        //                                    cell.imageView.image = UIImage(data: imageData!)
-        //                                }
-        //                        }
-        //                }
-        //            }
-        //            cell.titleLabel.text = tvStationsControllerInstance!.nameOfTVStationInRegion(region, station: indexPath.row)
-        //            cell.backgroundColor = UIColor.clearColor()
-        //        }
-        
         return cell
     }
     

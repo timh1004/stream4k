@@ -46,7 +46,7 @@ class ViewController: UICollectionViewController {
             if userID.characters.count == 8 {
                 
                 let urlWithUserID = "http://\(userID).xbmc.stream4k.net"
-                if let contentsOfFile = try? String(contentsOfURL: NSURL(string: urlWithUserID)!) {
+                if let contentsOfFile = String(contentsOfURL: NSURL(string: urlWithUserID)!) {
                     print(contentsOfFile)
                     
                     
@@ -93,12 +93,16 @@ class ViewController: UICollectionViewController {
     
     func showUserAlertController() {
         
-        let alertController = UIAlertController(title: "Benutzerkennung", message: "Bitte gib deine 8-stellige Benutzerkennung ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Benutzerkennung und TLD", message: "Bitte gib deine 8-stellige Benutzerkennung und die TLD ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
         
         let loginAction = UIAlertAction(title: "Speichern", style: .Default) { (_) in
             let loginTextField = alertController.textFields![0] as UITextField
+            let tldTextField = alertController.textFields![1] as UITextField
             self.defaults.setObject(loginTextField.text, forKey: "userID")
+            self.defaults.setObject(tldTextField.text, forKey: "userTld")
+            
             print(loginTextField.text)
+            print(tldTextField.text)
             self.loadStations()
         }
         loginAction.enabled = true
@@ -115,6 +119,17 @@ class ViewController: UICollectionViewController {
             }
             
         }
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            if let userTld = self.defaults.stringForKey("userTld") {
+                if userTld.characters.count >= 0 {
+                    textField.text = userTld
+                } else {
+                    textField.placeholder = "TLD"
+                }
+            }
+            
+        }
+        
         
         alertController.addAction(loginAction)
         alertController.addAction(cancelAction)

@@ -18,7 +18,7 @@ class StationsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(StationsTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         
         //loadStations()
@@ -28,7 +28,7 @@ class StationsTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         
         if tvStations.count == 0 {
-            if let _ = self.defaults.stringForKey("userID") {
+            if let _ = self.defaults.stringForKey("kodiUrl") {
                 loadStations()
             } else {
                 showUserAlertController()
@@ -50,16 +50,14 @@ class StationsTableViewController: UITableViewController {
     
     func showUserAlertController() {
         
-        let alertController = UIAlertController(title: "Benutzerkennung und TLD", message: "Bitte gib deine 8-stellige Benutzerkennung und die TLD (Zum Beispiel \"net\") ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "URL für Kodi", message: "Bitte gib deinen M3U Link für Kodi ein. Diesen findest du im Panel unter Kodi.", preferredStyle: .Alert)
         
         let loginAction = UIAlertAction(title: "Speichern", style: .Default) { (_) in
-            let loginTextField = alertController.textFields![0] as UITextField
-            let tldTextField = alertController.textFields![1] as UITextField
-            self.defaults.setObject(loginTextField.text, forKey: "userID")
-            self.defaults.setObject(tldTextField.text, forKey: "userTld")
+            let urlTextField = alertController.textFields![0] as UITextField
+            //            let tldTextField = alertController.textFields![1] as UITextField
+            self.defaults.setObject(urlTextField.text, forKey: "kodiUrl")
+            //            self.defaults.setObject(tldTextField.text, forKey: "userTld")
             
-            print(loginTextField.text)
-            print(tldTextField.text)
             self.loadStations()
         }
         loginAction.enabled = true
@@ -67,33 +65,33 @@ class StationsTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .Cancel) { (_) in }
         
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            if let userID = self.defaults.stringForKey("userID") {
-                if userID.characters.count >= 0 {
-                    textField.text = userID
+            if let kodiUrl = self.defaults.stringForKey("kodiUrl") {
+                if kodiUrl.characters.count >= 0 {
+                    textField.text = kodiUrl
                 } else {
-                    textField.placeholder = "Benutzerkennung"
+                    textField.placeholder = "Kodi URL"
                 }
             }
             
             NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                loginAction.enabled = textField.text?.characters.count == 8
+                loginAction.enabled = textField.text?.characters.count >= 0
             }
             
         }
-        alertController.addTextFieldWithConfigurationHandler { (textField) in
-            if let userTld = self.defaults.stringForKey("userTld") {
-                if userTld.characters.count >= 0 {
-                    textField.text = userTld
-                } else {
-                    textField.placeholder = "Zum Beispiel \"net\""
-                }
-            }
-            
-            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                loginAction.enabled = textField.text?.characters.count >= 2
-            }
-            
-        }
+        //        alertController.addTextFieldWithConfigurationHandler { (textField) in
+        //            if let userTld = self.defaults.stringForKey("userTld") {
+        //                if userTld.characters.count >= 0 {
+        //                    textField.text = userTld
+        //                } else {
+        //                    textField.placeholder = "Zum Beispiel \"net\""
+        //                }
+        //            }
+        //
+        //            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
+        //                loginAction.enabled = textField.text?.characters.count >= 2
+        //            }
+        //
+        //        }
         
         
         alertController.addAction(loginAction)
@@ -107,49 +105,46 @@ class StationsTableViewController: UITableViewController {
     
     func loadStations() {
         
-        if let userID = defaults.stringForKey("userID") {
-            if let userTld = defaults.stringForKey("userTld") {
-                if userID.characters.count == 8 {
-                    
-                    let urlWithUserID = "http://\(userID).xbmc.stream4k.\(userTld)"
-                    if let contentsOfFile = try? String(contentsOfURL: NSURL(string: urlWithUserID)!) {
-                        print(contentsOfFile)
-                        
-                        
-                        let instance = TVStationsController()
-                        
-                        
-                        
-                        tvStations = instance.parseM3U(contentsOfFile)!
-                        
-                        print(tvStations)
-                        
-                        
-                        
-                    } else {
-                        print("keine website")
-                        
-                        tvStations = []
-                        tableView.reloadData()
-                        
-                        let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche Benutzerkennung/TLD oder Probleme mit der Website?", preferredStyle: .Alert)
-                        
-                        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                            self.showUserAlertController()
-                        }
-                        
-                        alertController.addAction(OKAction)
-                        
-                        self.presentViewController(alertController, animated: true) {
-                        }
-                        
-                    }
-                }
+        if let kodiUrl = defaults.stringForKey("kodiUrl") {
+            
+            
+            print(kodiUrl)
+            
+            if let contentsOfFile = try? String(contentsOfURL: NSURL(string: kodiUrl)!) {
+                print(contentsOfFile)
+                
+                
+                let instance = TVStationsController()
+                
+                
+                
+                tvStations = instance.parseM3U(contentsOfFile)!
+                
+                print(tvStations)
+                
+                
+                
             } else {
-                showUserAlertController()
+                print("keine website")
+                
+                tvStations = []
+                tableView.reloadData()
+                
+                let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche Benutzerkennung/TLD oder Probleme mit der Website?", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    self.showUserAlertController()
+                }
+                
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                }
+                
             }
+            
+            
         } else {
-            print("no id")
             showUserAlertController()
         }
         
@@ -233,39 +228,39 @@ class StationsTableViewController: UITableViewController {
     
     
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
     
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
     
     /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
     
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
     
     // MARK: - Navigation
     

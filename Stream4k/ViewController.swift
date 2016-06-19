@@ -45,49 +45,46 @@ class ViewController: UICollectionViewController {
     
     func loadStations() {
         
-        if let userID = defaults.stringForKey("userID") {
-            if let userTld = defaults.stringForKey("userTld") {
-                if userID.characters.count == 8 {
-                    
-                    let urlWithUserID = "http://\(userID).xbmc.stream4k.\(userTld)"
-                    if let contentsOfFile = try? String(contentsOfURL: NSURL(string: urlWithUserID)!) {
-                        print(contentsOfFile)
-                        
-                        
-                        let instance = TVStationsController()
-                        
-                        
-                        
-                        tvStations = instance.parseM3U(contentsOfFile)!
-                        
-                        print(tvStations)
-                        
-                        
-                        
-                    } else {
-                        print("keine website")
-                        
-                        tvStations = []
-                        collectionView!.reloadData()
-                        
-                        let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche Benutzerkennung/TLD oder Probleme mit der Website?", preferredStyle: .Alert)
-                        
-                        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                            self.showUserAlertController()
-                        }
-                        
-                        alertController.addAction(OKAction)
-                        
-                        self.presentViewController(alertController, animated: true) {
-                        }
-                        
-                    }
-                }
+        if let kodiUrl = defaults.stringForKey("kodiUrl") {
+            
+            
+            print(kodiUrl)
+            
+            if let contentsOfFile = try? String(contentsOfURL: NSURL(string: kodiUrl)!) {
+                print(contentsOfFile)
+                
+                
+                let instance = TVStationsController()
+                
+                
+                
+                tvStations = instance.parseM3U(contentsOfFile)!
+                
+                print(tvStations)
+                
+                
+                
             } else {
-                showUserAlertController()
+                print("keine website")
+                
+                tvStations = []
+                collectionView!.reloadData()
+                
+                let alertController = UIAlertController(title: "Fehler", message: "Fehler beim laden der M3U.\nFalsche URL oder Probleme mit der Website?", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    self.showUserAlertController()
+                }
+                
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                }
+                
             }
+            
+            
         } else {
-            print("no id")
             showUserAlertController()
         }
         
@@ -97,16 +94,14 @@ class ViewController: UICollectionViewController {
     
     func showUserAlertController() {
         
-        let alertController = UIAlertController(title: "Benutzerkennung und TLD", message: "Bitte gib deine 8-stellige Benutzerkennung und die TLD (Zum Beispiel \"net\") ein. Diese findest du im Forum unter Kodi innerhalb des M3U Links.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "URL für Kodi", message: "Bitte gib deinen M3U Link für Kodi ein. Diesen findest du im Panel unter Kodi.", preferredStyle: .Alert)
         
         let loginAction = UIAlertAction(title: "Speichern", style: .Default) { (_) in
-            let loginTextField = alertController.textFields![0] as UITextField
-            let tldTextField = alertController.textFields![1] as UITextField
-            self.defaults.setObject(loginTextField.text, forKey: "userID")
-            self.defaults.setObject(tldTextField.text, forKey: "userTld")
+            let urlTextField = alertController.textFields![0] as UITextField
+            //            let tldTextField = alertController.textFields![1] as UITextField
+            self.defaults.setObject(urlTextField.text, forKey: "kodiUrl")
+            //            self.defaults.setObject(tldTextField.text, forKey: "userTld")
             
-            print(loginTextField.text)
-            print(tldTextField.text)
             self.loadStations()
         }
         loginAction.enabled = true
@@ -114,22 +109,16 @@ class ViewController: UICollectionViewController {
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .Cancel) { (_) in }
         
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            if let userID = self.defaults.stringForKey("userID") {
-                if userID.characters.count >= 0 {
-                    textField.text = userID
+            if let kodiUrl = self.defaults.stringForKey("kodiUrl") {
+                if kodiUrl.characters.count >= 0 {
+                    textField.text = kodiUrl
                 } else {
-                    textField.placeholder = "Benutzerkennung"
+                    textField.placeholder = "Kodi URL"
                 }
             }
             
-        }
-        alertController.addTextFieldWithConfigurationHandler { (textField) in
-            if let userTld = self.defaults.stringForKey("userTld") {
-                if userTld.characters.count >= 0 {
-                    textField.text = userTld
-                } else {
-                    textField.placeholder = "Zum Beispiel \"net\""
-                }
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
+                loginAction.enabled = textField.text?.characters.count >= 0
             }
             
         }

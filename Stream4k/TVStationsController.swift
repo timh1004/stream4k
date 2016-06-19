@@ -52,7 +52,8 @@ class TVStationsController {
                     // Display string before first index.
                     //                    var beforeStart = start.predecessor()
                     //    print(line[line.startIndex..<beforeStart])
-                    let title = array[3].substringFromIndex(array[3].startIndex.advancedBy(2)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                    let title = array[3].substringFromIndex(array[3].startIndex.advancedBy(1)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                    print(title)
                     let mediaItem   = MediaItem(title: title, group: array[2], urlString: "")
                     mediaItems.append(mediaItem)
                 }
